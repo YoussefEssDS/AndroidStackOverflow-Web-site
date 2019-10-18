@@ -20,7 +20,7 @@ def homepage(request):
 
 def signup(request):
 	if request.method=='POST':
-		form=UserCreateForm(request.POST)
+		form=UserCreateForm(data=request.POST)
 		if form.is_valid():
 			user=form.save()
 			username=form.cleaned_data.get('username')
@@ -31,8 +31,8 @@ def signup(request):
 		else: 
 			for msg in form.error_messages:
 				messages.error(request,f"{msg}:{form.error_messages[msg]}")
-
-	form=UserCreateForm
+	else:
+		form=UserCreateForm()
 	return render(request,
 				  'main/signup.html',
 				   context={'form':form})
