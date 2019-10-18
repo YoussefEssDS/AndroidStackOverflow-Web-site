@@ -13,5 +13,14 @@ The solution proposed is a web site that provides the following:
   2- Possibility to view the questions, and be directed to answer it on Stack Overflow. 
   
   3- Bonus: The registered users are able to receive emails each time a new question is asked. 
-    (This feature might cause receiving a lot of emails, this feature can be improved to only send sppecific questions
-     notification with particular key words, although for time constraints I kept as it is now.)  
+    (This feature might cause receiving a lot of emails. Although, it can be improved to only send questions
+     notifications depending of preferences of the user and answering history, although due to time constraints I kept it as simple as possible for now.)
+     
+ 
+ ### Realization of the website:
+
+##### Tools: 
+
+I chosed to use Django framework to build this website, this is probably a good time for you to install the last version of django via the following command: 
+
+''' pip install django '''
