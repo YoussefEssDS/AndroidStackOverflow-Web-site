@@ -19,8 +19,32 @@ The solution proposed is a web site that provides the following:
  
  ### Realization of the website:
 
+#### Conception: 
+
+  The website is built using the MVC design pattern supported by Django.
+
 ##### Tools: 
 
 I chosed to use Django framework to build this website, this is probably a good time for you to install the last version of django via the following command: 
 
-''' pip install django '''
+``` pip install django ```
+
+Two important tools for this website that allowed the extraction of data are:
+
+  1-Requests:       ``` pip install requests ```  https://requests.kennethreitz.org/en/master/
+  
+  2- BeautifullSoup4: ``` pip install bs4 ``` https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+HTML/CSS obviously included, in particular I used Materalize framework (https://materializecss.com/) for some pages styling.
+
+#### How to deploy the web site locally: 
+
+Unfortunately, and because of time constraints, I couldn't upload the website, although it can be easly deployed on youe machine locally, by following these steps: (I'm assuming you have python installed) 
+
+  1- If you didn't install django, requests, bs4 yplease do.
+  2- You can download this full directory.
+  3- Using your command prompt, navigate the the downloaded directory. 
+  4- Run the following command: ``` python manager.py runserver ```
+  5- On your browser visit: localhost:8000.
+ 
+  
