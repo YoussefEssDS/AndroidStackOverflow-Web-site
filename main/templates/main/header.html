@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>AndroidStOv</title>
+    <!-- Bootstrap Core CSS -->
+    <head>
+    {% load static%}
+     <!-- Compiled and minified CSS -->
+    <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link href="{% static 'main/css/materialize.css' %}" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+
+    </head>
+
+<body>
+    <header>
+        <nav>
+            <div class="nav-wrapper">
+              <a href="/" class="brand-logo">
+                <img class="img" style="width:50px; height;50px; margin-top:5px" src="/static/main/images/logo.jpg">
+              AndroidStOv</a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a></li>
+                <li><i class="material-icons">search</i></li>
+                <li> <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control">
+                        </div>
+                    </form>
+                </li>
+              </ul>
+            </div>
+        </nav>
+    </header>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success'%}
+                <script>M.toast({html: "{{message}}", classes: 'green rounded', displayLength:2000});</script>
+            {% elif message.tags == 'info'%}
+                <script>M.toast({html: "{{message}}", classes: 'blue rounded', displayLength:2000});</script>
+            {% elif message.tags == 'warning'%}
+                <script>M.toast({html: "{{message}}", classes: 'orange rounded', displayLength:10000});</script>
+            {% elif message.tags == 'error'%}
+                <script>M.toast({html: "{{message}}", classes: 'red rounded', displayLength:10000});</script>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    <main>
+        <!--/Left Column-->
+        <div class="row">
+            <div class="col s3">
+
+                <!-- List display -->
+                <h3 class="panel-title"><span class="glyphicon glyphicon-random"></span>Navigate to:</h3>
+                <div class="collection">
+                    <a href="/recent" class="collection-item">Recent questions</a>
+                    <a href="/top" class="collection-item">Top voted questions</a>
+                </div>      
+            </div>
+            {% block content %}{% endblock %}
+            <!-- Right Column -->
+            {% if user.is_authenticated%}
+                <div class="col s3">
+                    <h5><b>Welcome {{user.username}}.</b></h5>
+                    <b><a href="/logout">Log out</a></b>
+                </div>
+            {% else %}
+                <div class="col s3">
+                <!-- Form --> 
+                <br>
+                <br>
+                <br>
+                <b><a href="/signup">Sign up</a> now and get the full benefits of our website.</b>
+                <br>
+                <br>
+                <br>
+                <b>If you already have an account,  <a href="/login">log in</a> instead.</b>
+            {% endif %}
+            
+    </main>
+     <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Contact:</h5>
+                <p class="grey-text text-lighten-4">oyoussefesseddiq@gmail.com</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links:</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="https://stackoverflow.com/" target="_blank">StackOverflow</a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://github.com/YoussefEssDS/Android-StackOverflow-Quest-Tool" target="_blank">Github</a></li>
+                </ul>
+                <h5>Legal stuff:</h5>
+                <p>The mascot credits return to: @android_stack</p>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2019 Copyright reserved.
+            </div>
+          </div>
+        </footer>
+
+    
+
+</body>
+<script src="{% static 'main/js/materialize.js' %}"></script>
+
+</html>

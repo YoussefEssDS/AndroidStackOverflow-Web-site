@@ -1,0 +1,23 @@
+{% extends "main/header.html"%}
+{%block content%}
+    <!-- Center Column -->
+        <div class="col s6">
+            <h2>Recent questions:</h2>     
+            <!-- Articles -->
+            {% for q in Questions%}
+            <div class="row">
+                <article class="col-xs-12">
+                    <h4>#{{q.quest_id}}:{{q.quest_title}} </h2>
+                    <ul class="collection">
+                        <li>Votes:   {{q.quest_votes}}</li> 
+                        <li>Answers: {{q.quest_answers}}</li> 
+                    </ul>
+                    <a class="waves-effect waves-light btn" href={{q.quest_thread}}>Answer</a>
+                    <a class="waves-effect waves-light btn" href="/view?{{q.quest_thread}}">View</a>
+                </article>
+            </div>
+            <hr>
+            {% endfor %}
+
+        </div><!--/Center Column-->
+{%endblock%}

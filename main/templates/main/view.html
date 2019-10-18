@@ -1,0 +1,26 @@
+{% extends "main/header.html"%}
+<link href="{static 'tinymce/css/prism.css' %" rel="stylesheet">
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+{%block content%}
+  {% for t in thread%}
+  <div class="col s6">
+    <div class="row">
+    <div class="col s12 m6 l12">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title"><b>{{t.title}}</b></span>
+          <br>
+            {{t.html_code|safe}}
+          </div>
+        <div class="card-action">
+          <a href="{{t.address}}">Answer this question</a>
+          <a href="/recent">Back</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  {% endfor %}
+{% endblock %}
+<script src="{% static 'tinymce/js/prism.js'}"
