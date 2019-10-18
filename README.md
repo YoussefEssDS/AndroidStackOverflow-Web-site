@@ -42,9 +42,13 @@ HTML/CSS obviously included, in particular I used Materalize framework (https://
 Unfortunately, and because of time constraints, I couldn't upload the website, although it can be easly deployed on youe machine locally, by following these steps: (I'm assuming you have python installed) 
 
   1- If you didn't install django, requests, bs4 yplease do.
+  
   2- You can download this full directory.
+  
   3- Using your command prompt, navigate the the downloaded directory. 
+  
   4- Run the following command: ``` python manager.py runserver ```
+  
   5- On your browser visit: localhost:8000.
  
   
