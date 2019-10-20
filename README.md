@@ -16,7 +16,7 @@ The solution proposed is a web site that provides the following:
   
   3- Bonus: The registered users are able to receive emails each time a new question is asked. 
     (This feature might cause receiving a lot of emails. Although, it can be improved to only send question
-     notifications depending of preferences of the user and his answering history, although due to time constraints I kept it as simple as possible for now.)
+     notifications depending on preferences of the user and his answering history, although due to time constraints I kept it as simple as possible for now.)
      
  
  ### Realization of the website:
