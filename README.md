@@ -53,4 +53,6 @@ Unfortunately, due to inconsistency of most free website hosts I didn't publish 
   
   5- On your browser visit: localhost:8000.
 
+You can also visit the website instead: https://ysfess.herokuapp.com
+
 Youssef Esseddiq Ouatiti.
